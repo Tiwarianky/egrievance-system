@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ankit.jpastepsdemo.entities.Account;
+
 import com.myproject.eGrievanceSystem.Repository.FileRepository;
 import com.myproject.eGrievanceSystem.Repository.QueryRepository;
 import com.myproject.eGrievanceSystem.Repository.UserRepo;
