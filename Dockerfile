@@ -1,17 +1,14 @@
-# Stage 1: Build using Maven
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+# Stage 1: Build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 
 WORKDIR /app
-
 COPY . .
-
 RUN mvn clean package -DskipTests
 
-# Stage 2: Run the app
-FROM openjdk:17-jdk-slim
+# Stage 2: Run
+FROM eclipse-temurin:21-jdk-jammy
 
 WORKDIR /app
-
 COPY --from=build /app/target/*.jar app.jar
 
 CMD ["java", "-jar", "app.jar"]
